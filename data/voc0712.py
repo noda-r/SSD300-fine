@@ -77,15 +77,16 @@ class VOCAnnotationTransform(object):
 
             pts = ['xmin', 'ymin', 'xmax', 'ymax']
             bndbox = []
+            print("label_idx :",bndbox)
             for i, pt in enumerate(pts):
                 cur_pt = int(bbox.find(pt).text) - 1
+                print("cur_pt:",cur_pt)
                 # scale height or width
                 #xmin,xmaxはwidth、ymin,ymaxはheightで割る
                 cur_pt = cur_pt / width if i % 2 == 0 else cur_pt / height
                 # bndboxに正解座標をセット
                 bndbox.append(cur_pt)
             label_idx = self.class_to_ind[name]
-            print("label_idx :",label_idx)
             # 正解座標の後に正解ラベルのインデックスをセット
             bndbox.append(label_idx)
             res += [bndbox]  # [xmin, ymin, xmax, ymax, label_ind]
