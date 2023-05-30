@@ -85,9 +85,9 @@ class VOCAnnotationTransform(object):
                 # bndboxに正解座標をセット
                 bndbox.append(cur_pt)
             label_idx = self.class_to_ind[name]
+            print("label_idx :",label_idx)
             # 正解座標の後に正解ラベルのインデックスをセット
             bndbox.append(label_idx)
-            print([bndbox])
             res += [bndbox]  # [xmin, ymin, xmax, ymax, label_ind]
             # img_id = target.find('filename').text[:-4]
         # 1画像に複数物体あるので、[物体数,[bndbox]]のリストを作成する
