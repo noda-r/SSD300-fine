@@ -90,6 +90,7 @@ class VOCAnnotationTransform(object):
             res += [bndbox]  # [xmin, ymin, xmax, ymax, label_ind]
             # img_id = target.find('filename').text[:-4]
         # 1画像に複数物体あるので、[物体数,[bndbox]]のリストを作成する
+        print(res)
         return res  # [[xmin, ymin, xmax, ymax, label_ind], ... ]
 
 
