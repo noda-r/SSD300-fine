@@ -82,7 +82,6 @@ class VOCAnnotationTransform(object):
                 # scale height or width
                 #xmin,xmaxはwidth、ymin,ymaxはheightで割る
                 cur_pt = cur_pt / width if i % 2 == 0 else cur_pt / height
-                print("cur_pt / width if i % 2 == 0 else cur_pt / height",cur_pt)
                 # bndboxに正解座標をセット
                 bndbox.append(cur_pt)
             label_idx = self.class_to_ind[name]
@@ -91,6 +90,7 @@ class VOCAnnotationTransform(object):
             res += [bndbox]  # [xmin, ymin, xmax, ymax, label_ind]
             # img_id = target.find('filename').text[:-4]
         # 1画像に複数物体あるので、[物体数,[bndbox]]のリストを作成する
+        print(res)
         return res  # [[xmin, ymin, xmax, ymax, label_ind], ... ]
 
 
