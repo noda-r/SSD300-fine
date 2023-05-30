@@ -33,9 +33,9 @@ voc = {
     'aspect_ratios': [[2], [2, 3], [2, 3], [2, 3], [2], [2]],
     'variance': [0.1, 0.2],
     'clip': True,
-    'name': 'PascalVoc_230519',
+    'name': 'PASCAL',
 }
-
+'''
 coco = {
     'num_classes': 201,
     'lr_steps': (280000, 360000, 400000),
@@ -50,3 +50,4 @@ coco = {
     'clip': True,
     'name': 'COCO',
 }
+'''
