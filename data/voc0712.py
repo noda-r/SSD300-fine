@@ -150,8 +150,9 @@ class VOCDetection(data.Dataset):
             target = self.target_transform(target, width, height)
 
         if self.transform is not None:
-            target = np.array(target)
             print(target)
+            target = np.array(target)
+            
             img, boxes, labels = self.transform(img, target[:, :4], target[:, 4])
             # to rgb
             # cv2のchannelsはbgrなのでrgbの順番に変更
