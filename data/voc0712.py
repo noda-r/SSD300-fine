@@ -112,7 +112,7 @@ class VOCDetection(data.Dataset):
 
     def __init__(self, root,
                 # handbook
-                image_sets=[('PascalVoc_230519', 'default')],
+                image_sets=[('PascalVoc_230519', 'trainval')],
                 #image_sets=[('BCCD', 'trainval')],
                 #image_sets=[('2007', 'trainval')],
                 # handbook
