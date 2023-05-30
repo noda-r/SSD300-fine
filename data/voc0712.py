@@ -57,7 +57,6 @@ class VOCAnnotationTransform(object):
 
     def __init__(self, class_to_ind=None, keep_difficult=False):
         self.class_to_ind = class_to_ind or dict(
-            #zip(BCCD_CLASSES, range(len(BCCD_CLASSES))))
             zip(PASCAL_CLASSES, range(len(PASCAL_CLASSES))))
         self.keep_difficult = keep_difficult
 
