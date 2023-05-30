@@ -35,7 +35,7 @@ voc = {
     'clip': True,
     'name': 'PASCAL',
 }
-'''
+
 coco = {
     'num_classes': 201,
     'lr_steps': (280000, 360000, 400000),
@@ -50,4 +50,3 @@ coco = {
     'clip': True,
     'name': 'COCO',
 }
-'''
