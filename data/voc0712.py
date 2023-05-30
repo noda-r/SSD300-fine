@@ -148,6 +148,7 @@ class VOCDetection(data.Dataset):
         height, width, channels = img.shape
 
         if self.target_transform is not None:
+            print(target, width, height)
             target = self.target_transform(target, width, height)
 
         if self.transform is not None:
