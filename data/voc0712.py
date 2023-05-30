@@ -133,7 +133,6 @@ class VOCDetection(data.Dataset):
 
     def __getitem__(self, index):
         im, gt, h, w = self.pull_item(index)
-        print("im, gt, h, w =",im, gt, h, w)
 
         return im, gt
 
@@ -142,13 +141,18 @@ class VOCDetection(data.Dataset):
 
     def pull_item(self, index):
         img_id = self.ids[index]
+        print("img_id",img_id)
 
         target = ET.parse(self._annopath % img_id).getroot()
+        print("target",target)
         img = cv2.imread(self._imgpath % img_id)
+        
         height, width, channels = img.shape
-
+        print("height, width, channels",height, width, channels)
+        
         if self.target_transform is not None:
             target = self.target_transform(target, width, height)
+            print(target)
 
         if self.transform is not None:
             target = np.array(target)
