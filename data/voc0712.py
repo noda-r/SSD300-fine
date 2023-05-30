@@ -68,7 +68,9 @@ class VOCAnnotationTransform(object):
             a list containing lists of bounding boxes  [bbox coords, class name]
         """
         res = []
+        print("target.iter('object') :"target.iter('object'))
         for obj in target.iter('object'):
+            print("obj",obj)
             difficult = int(obj.find('difficult').text) == 1
             if not self.keep_difficult and difficult:
                 continue
@@ -90,7 +92,6 @@ class VOCAnnotationTransform(object):
             res += [bndbox]  # [xmin, ymin, xmax, ymax, label_ind]
             # img_id = target.find('filename').text[:-4]
         # 1画像に複数物体あるので、[物体数,[bndbox]]のリストを作成する
-        print(res)
         return res  # [[xmin, ymin, xmax, ymax, label_ind], ... ]
 
 
