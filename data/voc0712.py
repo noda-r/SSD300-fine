@@ -78,9 +78,7 @@ class VOCAnnotationTransform(object):
             pts = ['xmin', 'ymin', 'xmax', 'ymax']
             bndbox = []
             for i, pt in enumerate(pts):
-                print("計算前：",bbox.find(pt).text)
-                print("計算後：",int(bbox.find(pt).text) - 1)
-                cur_pt = int(bbox.find(pt).text) - 1
+                cur_pt = int(float(bbox.find(pt).text)) - 1
                 # scale height or width
                 #xmin,xmaxはwidth、ymin,ymaxはheightで割る
                 cur_pt = cur_pt / width if i % 2 == 0 else cur_pt / height
