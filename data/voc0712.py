@@ -79,10 +79,10 @@ class VOCAnnotationTransform(object):
             bndbox = []
             for i, pt in enumerate(pts):
                 cur_pt = int(float(bbox.find(pt).text)) - 1
-                print(cur_pt)
                 # scale height or width
                 #xmin,xmaxはwidth、ymin,ymaxはheightで割る
                 cur_pt = cur_pt / width if i % 2 == 0 else cur_pt / height
+                print("cur_pt / width if i % 2 == 0 else cur_pt / height",cur_pt)
                 # bndboxに正解座標をセット
                 bndbox.append(cur_pt)
             label_idx = self.class_to_ind[name]
