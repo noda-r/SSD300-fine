@@ -68,7 +68,7 @@ class VOCAnnotationTransform(object):
             a list containing lists of bounding boxes  [bbox coords, class name]
         """
         res = []
-        print("target.iter('object') :"target.iter('object'))
+        print("target.iter('object') :",target.iter('object'))
         for obj in target.iter('object'):
             print("obj",obj)
             difficult = int(obj.find('difficult').text) == 1
