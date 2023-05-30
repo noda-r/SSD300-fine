@@ -147,7 +147,7 @@ class VOCDetection(data.Dataset):
         img = cv2.imread(self._imgpath % img_id)
         
         height, width, channels = img.shape
-        print("self.target_transform",self.target_transform)
+        print("self.target_transform.class_to_ind",self.target_transform.class_to_ind)
         if self.target_transform is not None:
             target = self.target_transform(target, width, height)
 
