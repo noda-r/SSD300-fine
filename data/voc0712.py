@@ -74,7 +74,7 @@ class VOCAnnotationTransform(object):
                 continue
             name = obj.find('name').text.lower().strip()
             bbox = obj.find('bndbox')
-            print("ちゃんと実行されてる")
+            print("(name,bbox)",(name,bbox))
 
             pts = ['xmin', 'ymin', 'xmax', 'ymax']
             bndbox = []
