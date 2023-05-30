@@ -132,7 +132,6 @@ class VOCDetection(data.Dataset):
                 self.ids.append((rootpath, line.strip()))
 
     def __getitem__(self, index):
-        print("index: ",index)
         im, gt, h, w = self.pull_item(index)
         print("im, gt, h, w =",im, gt, h, w)
 
